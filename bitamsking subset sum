@@ -1,0 +1,45 @@
+#include <bits/stdc++.h>
+using namespace std;
+int arr[1000000];
+int call(int n,int sum)
+{
+
+    int ans=0;
+    for(int x=0;x<=((int)(pow(2,n)-1));x++)
+    {
+        //cout<<"working for ="<<x<<endl;
+        int csum=0;
+        for(int y=0;y<n;y++)
+        {
+            if((x&(1<<y))!=0)
+            {
+                csum+=arr[y];
+            }
+        }
+        //cout<<"sum for "<<x<<" is "<<csum<<endl;
+        if(csum>=sum)
+            ans++;
+    }
+    return ans;
+}
+int main()
+{
+
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    int run=0;
+    cin>>run;
+
+    for(int w=0;w<run;w++)
+    {
+        int n=0;
+        cin>>n;
+        for(int x=0;x<n;x++)
+        {
+            cin>>arr[x];
+        }
+        int sum=0;
+        cin>>sum;
+        //cout<<"answer"<<call(n,sum);
+    }
+}
