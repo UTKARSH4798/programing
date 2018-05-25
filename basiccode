@@ -6,6 +6,7 @@ int main()
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     int run=0;
+    cin>>run;
     
     for(int w=0;w<run;w++)
     return 0;
